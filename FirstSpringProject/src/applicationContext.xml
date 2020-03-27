@@ -9,6 +9,8 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
+	
+	<context:property-placeholder location="classpath:dataCompnies.properties"/>
 
 	<!-- Dependency creation -->
 	<bean id="myReport" class="inversionOFcontrol.Report"/>
@@ -27,8 +29,8 @@
 		<property name="newReport" ref="myReport"></property>
 		
 		<!-- Field injection-->
-		<property name="email" value="secretary@kodeprestige.com"></property>
-		<property name="companyName" value="KodePrestige.com"></property>
+		<property name="email" value="${email}"></property>
+		<property name="companyName" value="${companyName}"></property>
 		
 	</bean>
 	
