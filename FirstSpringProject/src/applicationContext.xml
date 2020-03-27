@@ -9,7 +9,16 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-	<bean id="myEmployee" class="inversionOFcontrol.BossEmployee"/>
+
+	<!-- Dependency creation -->
+	<bean id="myReport" class="inversionOFcontrol.Report"/>
+	
+
+	<bean id="myEmployee" class="inversionOFcontrol.BossEmployee">
+	
+		<constructor-arg ref="myReport"></constructor-arg>
+	
+	</bean>
 	
 	
 </beans>

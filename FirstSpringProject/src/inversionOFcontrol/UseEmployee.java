@@ -15,10 +15,12 @@ public class UseEmployee {
 		//close the xml file
 		context.close();
 		
-		//use the bean
+		//use myEmloyee bean
 		System.out.println(employee.getType());
 		
-
+		//use myReport bean
+		System.out.println(employee.getReport());
+		
 	}
 
 }
