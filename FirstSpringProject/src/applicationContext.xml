@@ -14,10 +14,18 @@
 	<bean id="myReport" class="inversionOFcontrol.Report"/>
 	
 
-	<bean id="myEmployee" class="inversionOFcontrol.BossEmployee">
+	<!-- Dependency creation with constructor -->
+	<bean id="myEmployeeConstructor" class="inversionOFcontrol.BossEmployee">
 	
 		<constructor-arg ref="myReport"></constructor-arg>
 	
+	</bean>
+	
+	<!-- Dependency creation with setter methods -->
+	<bean id="myEmployeeSetter" class="inversionOFcontrol.SecretaryEmployee">
+	
+		<property name="newReport" ref="myReport"></property>
+		
 	</bean>
 	
 	

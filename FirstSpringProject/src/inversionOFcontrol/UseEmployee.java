@@ -10,7 +10,7 @@ public class UseEmployee {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//ask for the bean
-		Employee employee = context.getBean("myEmployee", Employee.class);
+		Employee employee = context.getBean("myEmployeeSetter", Employee.class);
 		
 		//close the xml file
 		context.close();
