@@ -26,6 +26,10 @@
 	
 		<property name="newReport" ref="myReport"></property>
 		
+		<!-- Field injection-->
+		<property name="email" value="secretary@kodeprestige.com"></property>
+		<property name="companyName" value="KodePrestige.com"></property>
+		
 	</bean>
 	
 	

@@ -6,20 +6,27 @@ public class UseEmployee {
 
 	public static void main(String[] args) {
 		
-		//load the xml file
+		//Load the xml file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		//ask for the bean
+		//Ask for the bean
 		Employee employee = context.getBean("myEmployeeSetter", Employee.class);
 		
-		//close the xml file
+		//Close the xml file
 		context.close();
 		
-		//use myEmloyee bean
+		//Use myEmloyee bean
+		System.out.println("**Use myEmloyee bean");
 		System.out.println(employee.getType());
 		
-		//use myReport bean
+		//Use myReport bean
+		System.out.println("\n**Use myReport bean");
 		System.out.println(employee.getReport());
+		
+		//Use field injection
+		System.out.println("\n**Use field injection:");
+		System.out.println("Company: " + ((SecretaryEmployee)employee).getCompanyName());
+		System.out.println("Email: " + ((SecretaryEmployee)employee).getEmail());
 		
 	}
 
