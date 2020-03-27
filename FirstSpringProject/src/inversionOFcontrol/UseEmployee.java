@@ -10,23 +10,20 @@ public class UseEmployee {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//Ask for the bean
-		Employee employee = context.getBean("myEmployeeSetter", Employee.class);
+		Employee employee1 = context.getBean("myEmployeeSetter", Employee.class);
+		Employee employee2 = context.getBean("myEmployeeSetter", Employee.class);
 		
 		//Close the xml file
 		context.close();
 		
-		//Use myEmloyee bean
-		System.out.println("**Use myEmloyee bean");
-		System.out.println(employee.getType());
-		
-		//Use myReport bean
-		System.out.println("\n**Use myReport bean");
-		System.out.println(employee.getReport());
-		
-		//Use field injection
-		System.out.println("\n**Use field injection:");
-		System.out.println("Company: " + ((SecretaryEmployee)employee).getCompanyName());
-		System.out.println("Email: " + ((SecretaryEmployee)employee).getEmail());
+		//true: Singelton false: Prototype
+		if(employee1 == employee2) {
+			System.out.println("**Spring uses Singelton by default"); 
+			System.out.println("Both objects point to the same memory address");
+		} else {
+			System.out.println("**applicationContext,xml -> bean: myEmployeeSetter -> scope=\"prototype\""); 
+			System.out.println("Objects are different");
+		}
 		
 	}
 

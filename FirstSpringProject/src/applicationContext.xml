@@ -9,28 +9,14 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-	
-	<context:property-placeholder location="classpath:dataCompnies.properties"/>
-
 	<!-- Dependency creation -->
 	<bean id="myReport" class="inversionOFcontrol.Report"/>
 	
-
-	<!-- Dependency creation with constructor -->
-	<bean id="myEmployeeConstructor" class="inversionOFcontrol.BossEmployee">
 	
-		<constructor-arg ref="myReport"></constructor-arg>
-	
-	</bean>
-	
-	<!-- Dependency creation with setter methods -->
-	<bean id="myEmployeeSetter" class="inversionOFcontrol.SecretaryEmployee">
+	<!-- Spring uses Singelton by default -->
+	<bean id="myEmployeeSetter" class="inversionOFcontrol.SecretaryEmployee" scope="prototype">
 	
 		<property name="newReport" ref="myReport"></property>
-		
-		<!-- Field injection-->
-		<property name="email" value="${email}"></property>
-		<property name="companyName" value="${companyName}"></property>
 		
 	</bean>
 	
