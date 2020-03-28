@@ -1,10 +1,15 @@
 package com.kodeprestige.inversionOFcontrol;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BossEmployee implements Employee {
 	
 	private CreationReports newReport;
 	
-	//Creating the constructor that injects the dependency
+	//Creating the constructor that injects the dependency with @Autowired
+	@Autowired
 	public BossEmployee(CreationReports newReport) {
 		this.newReport = newReport;
 	}
