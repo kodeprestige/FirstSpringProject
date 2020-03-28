@@ -20,5 +20,17 @@ public class DirectorEmployee implements Employee {
 	public String getReport() {
 		return "Director: " + newReport.getReport();
 	}
+	
+	//Spring init method
+	public void init() {
+		System.out.println("Tasks executed before bean initiation");
+	}
+	
+	
+	//Spring destroy method
+	public void destroy() {
+		System.out.println("Tasks executed before bean destruction");
+	}
+	
 
 }
