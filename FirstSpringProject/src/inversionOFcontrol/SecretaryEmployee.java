@@ -1,5 +1,8 @@
 package inversionOFcontrol;
 
+import org.springframework.stereotype.Component;
+
+@Component("SecretaryEmployee")
 public class SecretaryEmployee implements Employee {
 	
 	private CreationReports newReport;
@@ -37,18 +40,16 @@ public class SecretaryEmployee implements Employee {
 		this.newReport = newReport;
 	}
 
-
-
-	@Override
-	public String getType() {
-
-		return "I am a Secretary";
-		
-	}
-
 	@Override
 	public String getReport() {
 		return "Secretary: " + newReport.getReport();
 	}
+
+	@Override
+	public String getType() {
+		return "I am a Secretary";
+	}
+
+	
 
 }

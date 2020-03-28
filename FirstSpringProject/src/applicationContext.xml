@@ -9,21 +9,8 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-	<!-- Dependency creation -->
-	<bean id="myReport" class="inversionOFcontrol.Report"/>
-	
-	
-	<!-- init and destroy -->
-	<bean 
-		id="myEmployeeConstructor"
-		class="inversionOFcontrol.DirectorEmployee" 
-	  	init-method="init"
-	  	destroy-method="destroy"
-		>
-	
-		<constructor-arg ref="myReport"></constructor-arg>
-	
-	</bean>
+	<!-- Java Annotations -->
+	<context:component-scan base-package="com.kodeprestige.inversionOFcontrol"></context:component-scan>
 	
 	
 </beans>
