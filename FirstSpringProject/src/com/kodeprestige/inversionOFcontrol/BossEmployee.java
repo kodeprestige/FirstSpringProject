@@ -8,8 +8,7 @@ public class BossEmployee implements Employee {
 	
 	private CreationReports newReport;
 	
-	//Creating the constructor that injects the dependency with @Autowired
-	@Autowired
+	//Creating the constructor that injects the dependency
 	public BossEmployee(CreationReports newReport) {
 		this.newReport = newReport;
 	}
