@@ -1,4 +1,4 @@
-package inversionOFcontrol;
+package com.kodeprestige.inversionOFcontrol;
 
 public class BossEmployee implements Employee {
 	

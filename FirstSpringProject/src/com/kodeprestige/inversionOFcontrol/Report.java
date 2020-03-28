@@ -1,4 +1,4 @@
-package inversionOFcontrol;
+package com.kodeprestige.inversionOFcontrol;
 
 public class Report implements CreationReports {
 

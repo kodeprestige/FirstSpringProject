@@ -1,8 +1,8 @@
-package inversionOFcontrol;
+package com.kodeprestige.inversionOFcontrol;
 
 import org.springframework.stereotype.Component;
 
-@Component("SecretaryEmployee")
+@Component
 public class SecretaryEmployee implements Employee {
 	
 	private CreationReports newReport;
