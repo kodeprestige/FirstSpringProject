@@ -10,7 +10,7 @@ public class UseEmployee {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//Ask for bean
-		Employee employee = context.getBean("bossEmployee", Employee.class);
+		Employee employee = context.getBean("secretaryEmployee", Employee.class);
 		
 		//Use init-method and destroy-method
 		System.out.println("\n" + employee.getType());
