@@ -1,14 +1,13 @@
 package com.kodeprestige.inversionOFcontrol;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-
-@Scope("prototype")
-public class SecretaryEmployee implements Employee {
+public class SecretaryEmployee implements Employee, InitializingBean, DisposableBean {
 
 	
 	//dependency injection with class field (@Autowired)
@@ -20,6 +19,7 @@ public class SecretaryEmployee implements Employee {
 	
 	private String email;
 	private String companyName;
+	
 	
 	public String getEmail() {
 		return email;
@@ -56,6 +56,28 @@ public class SecretaryEmployee implements Employee {
 	public String getType() {
 		return "I am a Secretary";
 	}
+
+	
+	//Execute tasks after Bean construction @PostConstruct.
+	public void postConstruct() {
+		System.out.println("Tasks executed after Bean construction");
+ 	}
+	
+	
+	//Execute tasks before Bean destruction @PreDestroy.
+ 	public void preDestroy() {
+ 		System.out.println("Tasks executed before bean destruction");
+ 	}	
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+    	postConstruct();
+    }
+
+    @Override
+    public void destroy() throws Exception {
+    	preDestroy();
+    }
 
 	
 
