@@ -1,15 +1,11 @@
 package com.kodeprestige.inversionOFcontrol;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class DirectorEmployee implements Employee {
 	
-	private CreationReports newReport;
+	private Report newReport;
 	
 	//Creating the constructor that injects the dependency
-	public DirectorEmployee(CreationReports newReport) {
+	public DirectorEmployee(Report newReport) {
 		this.newReport = newReport;
 	}
 

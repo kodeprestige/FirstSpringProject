@@ -1,15 +1,18 @@
 package com.kodeprestige.inversionOFcontrol;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SecretaryEmployee implements Employee {
+
 	
-	//Ex: 3
-	//dependency injection with class field
+	//dependency injection with class field (@Autowired)
+	//specify a bean identifier (@Qualifier)
 	@Autowired
-	private CreationReports newReport;
+	@Qualifier("custumerReport")
+	private Report newReport;
 	
 	
 	private String email;
@@ -36,23 +39,8 @@ public class SecretaryEmployee implements Employee {
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-
-
-//	//Ex: 1
-//	//Creating the setter that injects the dependency with @Autowired
-//	@Autowired
-//	public void setNewReport(CreationReports newReport) {
-//		this.newReport = newReport;
-//	}
 	
-//	//Ex: 2
-//	//Creating the method that injects the dependency with @Autowired
-//	@Autowired
-//	public void newReport(CreationReports newReport) {
-//		this.newReport = newReport;
-//	}
-	
-	public void setNewReport(CreationReports newReport) {
+	public void setNewReport(Report newReport) {
 		this.newReport = newReport;
 	}
 
