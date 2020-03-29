@@ -1,13 +1,12 @@
 package com.kodeprestige.inversionOFcontrol;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 public class UseEmployee {
 
 	public static void main(String[] args) {
 		
 		//Load the xml file
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationContext.class);
 
  		//Ask for the bean
  		Employee bossEmployee = context.getBean("bossEmployee", Employee.class);
@@ -23,7 +22,7 @@ public class UseEmployee {
  		System.out.println(directorEmployee.getType());
  		System.out.println(directorEmployee.getReport() + "\n");
  		
- 		//Close the xml file
+ 		//Close context
  		context.close();
 
  	}
