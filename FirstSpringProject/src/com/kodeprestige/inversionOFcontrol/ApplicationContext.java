@@ -3,9 +3,11 @@ package com.kodeprestige.inversionOFcontrol;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan
+@PropertySource("classpath:dataCompanies.properties")
 public class ApplicationContext {
 	
 	//Define bean for FinancialReport
